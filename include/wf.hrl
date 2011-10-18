@@ -100,7 +100,7 @@
 -record(image, {?ELEMENT_BASE(element_image), image="", alt}).
 -record(lightbox, {?ELEMENT_BASE(element_lightbox), body="" }).
 -record(table, {?ELEMENT_BASE(element_table), rows, header=[], footer=[]}).
--record(tablerow, {?ELEMENT_BASE(element_tablerow), cells}).
+-record(tablerow, {?ELEMENT_BASE(element_tablerow), cells, html_id}).
 -record(tableheader, {?ELEMENT_BASE(element_tableheader), text="", html_encode=true, body="", align="left", valign="middle", colspan=1, rowspan=1}).
 -record(tablecell, {?ELEMENT_BASE(element_tablecell), text="", html_encode=true, body="", align="left", valign="middle", colspan=1, rowspan=1}).
 -record(singlerow, {?ELEMENT_BASE(element_singlerow), cells}). 
