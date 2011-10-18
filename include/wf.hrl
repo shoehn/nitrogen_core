@@ -62,7 +62,7 @@
 %%% FRAMEWORK %%%
 
 %%% Elements %%%
--define(ELEMENT_BASE(Module), is_element=is_element, module=Module, id, anchor, actions, show_if=true, class="", style="").
+-define(ELEMENT_BASE(Module), is_element=is_element, module=Module, id, anchor, actions, show_if=true, class="", style="", html_id).
 -record(elementbase, {?ELEMENT_BASE(undefined)}).
 -record(template, {?ELEMENT_BASE(element_template), file, bindings=[] }).
 -record(function_el, {?ELEMENT_BASE(element_function), function=fun() -> [] end}).
@@ -78,14 +78,14 @@
 -record(br, {?ELEMENT_BASE(element_br) }).
 -record(hr, {?ELEMENT_BASE(element_hr) }).
 -record(p, {?ELEMENT_BASE(element_p), body="", text="", html_encode=true}).
--record(label, {?ELEMENT_BASE(element_label), body="", text="", html_encode=true}).
+-record(label, {?ELEMENT_BASE(element_label), body="", text="", html_encode=true, for}).
 -record(value, {?ELEMENT_BASE(element_value), text="", html_encode=true}).
 -record(link, {?ELEMENT_BASE(element_link), title = "", text="", body="", new=false, html_encode=true, url="javascript:", postback, delegate}).
 -record(error, {?ELEMENT_BASE(element_error), text="", html_encode=true}).
 -record(span, {?ELEMENT_BASE(element_span), body="", text="", html_encode=true}).
 -record(button, {?ELEMENT_BASE(element_button), text="Button", html_encode=true, postback, delegate}).
 -record(literal, {?ELEMENT_BASE(element_literal), text="", html_encode=true}).
--record(textbox, {?ELEMENT_BASE(element_textbox), text="", maxlength="", html_encode=true, html_id, next, postback, delegate}).
+-record(textbox, {?ELEMENT_BASE(element_textbox), text="", maxlength="", html_encode=true, next, postback, delegate}).
 -record(hidden, {?ELEMENT_BASE(element_hidden), text="", html_encode=true}).
 -record(textarea, {?ELEMENT_BASE(element_textarea), text="", html_encode=true}).
 -record(datepicker_textbox, {?ELEMENT_BASE(element_datepicker_textbox), text="", next, html_encode=true, validators=[], options = [{dateFormat, "yy-mm-dd"}] }).
@@ -95,12 +95,12 @@
 -record(radiogroup, {?ELEMENT_BASE(element_radiogroup), body=[]}).
 -record(radio, {?ELEMENT_BASE(element_radio), text="", html_encode=true, value, name, checked=false, postback, delegate}).
 -record(password, {?ELEMENT_BASE(element_password), text="", html_encode=true, next, postback, delegate}).
--record(panel, {?ELEMENT_BASE(element_panel), body="", text="", html_encode=true, html_id}).
+-record(panel, {?ELEMENT_BASE(element_panel), body="", text="", html_encode=true}).
 -record(spinner, {?ELEMENT_BASE(element_spinner), image="/nitrogen/spinner.gif"}).
 -record(image, {?ELEMENT_BASE(element_image), image="", alt}).
 -record(lightbox, {?ELEMENT_BASE(element_lightbox), body="" }).
 -record(table, {?ELEMENT_BASE(element_table), rows, header=[], footer=[]}).
--record(tablerow, {?ELEMENT_BASE(element_tablerow), cells, html_id}).
+-record(tablerow, {?ELEMENT_BASE(element_tablerow), cells}).
 -record(tableheader, {?ELEMENT_BASE(element_tableheader), text="", html_encode=true, body="", align="left", valign="middle", colspan=1, rowspan=1}).
 -record(tablecell, {?ELEMENT_BASE(element_tablecell), text="", html_encode=true, body="", align="left", valign="middle", colspan=1, rowspan=1}).
 -record(singlerow, {?ELEMENT_BASE(element_singlerow), cells}). 
